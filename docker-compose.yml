@@ -1,10 +1,11 @@
 version: '3.8'
 services:
   mrm_nn_photo:
+    build: service
+    restart: always    
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - /etc/timezone:/etc/timezone:ro
-    build: service
+      - /etc/timezone:/etc/timezone:ro    
     environment:
       - SERVICE_NAME=МРМ НН фото (debug)
       - SERVICE_URL=https://example.com
