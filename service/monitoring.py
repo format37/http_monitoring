@@ -17,8 +17,16 @@ def main():
     bot = telebot.TeleBot(api_token, parse_mode=None)
     last_try_succesfull = True
 
+    dt = str(datetime.now())
+    
+    bot.send_message(
+                    chat_id, 
+                    name+'\nMonitoring started\n'+dt
+                )
+
     while True:
         r = requests.get(url)
+        dt = str(datetime.now())
         if r.status_code == 200:
             if not last_try_succesfull:
                 bot.send_message(
@@ -29,7 +37,6 @@ def main():
             sleep(regular_sleep)
         else:
             last_try_succesfull = False
-            dt = str(datetime.now())
             try:
                 r.encoding = 'utf-8'
                 soup = BeautifulSoup(r.text, 'lxml')

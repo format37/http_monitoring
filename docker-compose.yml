@@ -10,6 +10,6 @@ services:
       - SERVICE_NAME=МРМ НН фото (debug)
       - SERVICE_URL=https://example.com
       - REGULAR_SLEEP=1
-      - ERROR_SLEEP=59
+      - ERROR_SLEEP=60
       - TELEGRAM_CHAT=place_there_your_chat_it
       - TELEGRAM_BOT_TOKEN=place_there_your_bot_token
