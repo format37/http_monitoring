@@ -10,8 +10,8 @@ import re
 def main():
     name = os.environ.get('SERVICE_NAME', 'noname')
     url = os.environ.get('SERVICE_URL', '')
-    regular_sleep = os.environ.get('REGULAR_SLEEP', '1')
-    error_sleep = os.environ.get('ERROR_SLEEP', '60')
+    regular_sleep = int(os.environ.get('REGULAR_SLEEP', '1'))
+    error_sleep = int(os.environ.get('ERROR_SLEEP', '60'))
     chat_id = os.environ.get('TELEGRAM_CHAT', '')
     api_token = os.environ.get('TELEGRAM_BOT_TOKEN', '')
     bot = telebot.TeleBot(api_token, parse_mode=None)
